@@ -1,8 +1,8 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 
-void chaterCallback(const std_msgs::String::ConstPtr& msg){
-	ROS_INFO(" heard: [%s]", msg->data.c_str());
+void chatterCallback(const std_msgs::String::ConstPtr& msg){
+	ROS_INFO("I heard: [%s]", msg->data.c_str());
 }
 
 int main(int argc, char **argv){

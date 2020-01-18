@@ -6,7 +6,7 @@
 #include <sstream>
 
 int main(int argc, char **argv){
-	ros::init(agc,argv,"talker"); // initalize ROS
+	ros::init(argc, argv, "talker"); // initalize ROS
 
 	ros::NodeHandle n; // initialize Node
 
@@ -19,10 +19,10 @@ int main(int argc, char **argv){
 		std_msgs::String msg;
 
 		std::stringstream ss;
-		ss<< "hello world" < count; // put hello world and count in string
-		msgs.data == ss.str(); // put string to msgs data
+		ss << "hello world " << count; // put hello world and count in string
+		msg.data = ss.str(); // put string to msg data
 
-		ROS_INFO("%s", msg.data.c_str()); // print out msgs data
+		ROS_INFO("%s", msg.data.c_str()); // print out msg data
 
 		chatter_pub.publish(msg); // publish string
 
