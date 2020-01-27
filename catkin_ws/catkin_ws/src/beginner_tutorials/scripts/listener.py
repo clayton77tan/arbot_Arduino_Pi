@@ -40,8 +40,8 @@ import rospy
 from std_msgs.msg import String
 
 def callback(data):
-    str = data.data
-    x = [int(s) for s in str.split() if s.isdigit()]
+    str2 = data.data
+    x = [int(s) for s in str2.split() if s.isdigit()]
     for y in x:
         z = y * 2
     rospy.loginfo(rospy.get_caller_id() + ' I heard %s', z)
