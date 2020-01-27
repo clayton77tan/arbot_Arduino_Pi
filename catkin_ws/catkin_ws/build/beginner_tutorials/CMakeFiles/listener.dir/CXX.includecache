@@ -15,6 +15,8 @@ iostream
 -
 fstream
 -
+sstream
+-
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h
