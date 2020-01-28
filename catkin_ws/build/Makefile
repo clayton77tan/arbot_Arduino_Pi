@@ -662,6 +662,19 @@ talker/fast:
 .PHONY : talker/fast
 
 #=============================================================================
+# Target rules for targets named parrot
+
+# Build rule for target.
+parrot: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 parrot
+.PHONY : parrot
+
+# fast build rule for target.
+parrot/fast:
+	$(MAKE) -f beginner_tutorials/CMakeFiles/parrot.dir/build.make beginner_tutorials/CMakeFiles/parrot.dir/build
+.PHONY : parrot/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_cpp
 
 # Build rule for target.
@@ -725,6 +738,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... listener"
 	@echo "... talker"
+	@echo "... parrot"
 	@echo "... roscpp_generate_messages_cpp"
 .PHONY : help
 

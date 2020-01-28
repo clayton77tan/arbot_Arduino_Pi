@@ -68,6 +68,18 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -101,17 +113,16 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target test
 test:
@@ -123,17 +134,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -603,6 +603,21 @@ talker/fast:
 .PHONY : talker/fast
 
 # Convenience name for target.
+beginner_tutorials/CMakeFiles/parrot.dir/rule:
+	cd /home/logan/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/parrot.dir/rule
+.PHONY : beginner_tutorials/CMakeFiles/parrot.dir/rule
+
+# Convenience name for target.
+parrot: beginner_tutorials/CMakeFiles/parrot.dir/rule
+
+.PHONY : parrot
+
+# fast build rule for target.
+parrot/fast:
+	cd /home/logan/catkin_ws/build && $(MAKE) -f beginner_tutorials/CMakeFiles/parrot.dir/build.make beginner_tutorials/CMakeFiles/parrot.dir/build
+.PHONY : parrot/fast
+
+# Convenience name for target.
 beginner_tutorials/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
 	cd /home/logan/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 beginner_tutorials/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : beginner_tutorials/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
@@ -616,6 +631,33 @@ roscpp_generate_messages_cpp: beginner_tutorials/CMakeFiles/roscpp_generate_mess
 roscpp_generate_messages_cpp/fast:
 	cd /home/logan/catkin_ws/build && $(MAKE) -f beginner_tutorials/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make beginner_tutorials/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
+
+src/PublisherSubscriber.o: src/PublisherSubscriber.cpp.o
+
+.PHONY : src/PublisherSubscriber.o
+
+# target to build an object file
+src/PublisherSubscriber.cpp.o:
+	cd /home/logan/catkin_ws/build && $(MAKE) -f beginner_tutorials/CMakeFiles/parrot.dir/build.make beginner_tutorials/CMakeFiles/parrot.dir/src/PublisherSubscriber.cpp.o
+.PHONY : src/PublisherSubscriber.cpp.o
+
+src/PublisherSubscriber.i: src/PublisherSubscriber.cpp.i
+
+.PHONY : src/PublisherSubscriber.i
+
+# target to preprocess a source file
+src/PublisherSubscriber.cpp.i:
+	cd /home/logan/catkin_ws/build && $(MAKE) -f beginner_tutorials/CMakeFiles/parrot.dir/build.make beginner_tutorials/CMakeFiles/parrot.dir/src/PublisherSubscriber.cpp.i
+.PHONY : src/PublisherSubscriber.cpp.i
+
+src/PublisherSubscriber.s: src/PublisherSubscriber.cpp.s
+
+.PHONY : src/PublisherSubscriber.s
+
+# target to generate assembly for a file
+src/PublisherSubscriber.cpp.s:
+	cd /home/logan/catkin_ws/build && $(MAKE) -f beginner_tutorials/CMakeFiles/parrot.dir/build.make beginner_tutorials/CMakeFiles/parrot.dir/src/PublisherSubscriber.cpp.s
+.PHONY : src/PublisherSubscriber.cpp.s
 
 src/listener.o: src/listener.cpp.o
 
@@ -678,6 +720,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
+	@echo "... install/local"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
@@ -701,7 +744,6 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... beginner_tutorials_generate_messages_eus"
 	@echo "... beginner_tutorials_generate_messages_py"
-	@echo "... install/local"
 	@echo "... beginner_tutorials_geneus"
 	@echo "... beginner_tutorials_generate_messages_nodejs"
 	@echo "... beginner_tutorials_gennodejs"
@@ -711,9 +753,13 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... listener"
 	@echo "... talker"
-	@echo "... test"
+	@echo "... parrot"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... src/PublisherSubscriber.o"
+	@echo "... src/PublisherSubscriber.i"
+	@echo "... src/PublisherSubscriber.s"
 	@echo "... src/listener.o"
 	@echo "... src/listener.i"
 	@echo "... src/listener.s"
