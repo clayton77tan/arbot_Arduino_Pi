@@ -1,4 +1,7 @@
 ## Arbot.py will be used as a preliminary API for our application
+## Created by Clayton Tan, Martin Contreras
+## 02/07/2020
+
 from __future__ import print_function
 
 import odrive
@@ -6,16 +9,22 @@ from odrive.enums import *
 import time
 import math
 
+#  Function initiates the search for an Odrive. To search for a specific Odrive go into the 
+#  Odrive tool and find the serialnumber with odrv0.serial_number. Convert that value to hex
+#  and use that to find the device as:
 
+## od = odrive.find_any(serial_number="hex number")
 
 def search_odrive():
 	print("Searching . . . ")
-	global od
+	global od, J1, J2
 	od = odrive.find_any() # search for the Odrive (may take about 6 seconds)
-	global J1 
 	J1 = od.axis0 # set J2 to axis1 to control the next motor
-	global J2 
 	J2 = od.axis1 # set J2 to axis1 to control the next motor
+
+
+# The calibration() function will use the input from the user to choose to 
+# calibrate one,two, or all motors on the Odrive. 
 
 def calibration(motors):
     if(motors == "1"):
@@ -40,6 +49,10 @@ def calibration(motors):
         J2.encoder.config.pre_calibrated = True
         time.sleep(15)
 
+
+## This option will allow the user to input the motor (1 or 2) and the mode to execute (v or p).
+# Inside they will be continously asked to input the velocity of the motor or the position in
+# units of counts. 
 def control_motors(motor, mode):
 	if motor == "1":
 		J1.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
