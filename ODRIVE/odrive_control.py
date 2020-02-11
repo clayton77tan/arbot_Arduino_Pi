@@ -38,19 +38,7 @@ if(cali == "y"):
         time.sleep(15)
 
 while True:
-    motor = input("Which motor would you like to calibrate (1 or 2 or B):")
-    if(motor == "1"):
-        J1.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
-        J1.motor.config.pre_calibrated = True
-        J1.encoder.config.pre_calibrated = True
-        time.sleep(15)
-
-    if(motor == "2"):
-        J2.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
-        J2.motor.config.pre_calibrated = True
-        J2.encoder.config.pre_calibrated = True
-        time.sleep(15)
-    mode = input("Set control mode (v or p): ")
+    motor,mode = input("Select a motor (1 or 2) and set the control mode (v or p) [Ex: 1,v]: ").split(,)
     J1.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
     if (mode == "v"):
         J1.controller.config.control_mode = CTRL_MODE_VELOCITY_CONTROL
