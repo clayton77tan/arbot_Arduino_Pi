@@ -8,10 +8,11 @@ calibrate_from_start = input("Do you want to calibrate (0,1,B,or N): ")
 arbot.calibration(calibrate_from_start)
 
 while True:
-    motor = input("Select a motor (0,1,q) : ")
-    if motor == "q":
-        shut_down()
-    else:
-        arbot.control_motors(motor,mode)
+	motor = input("Select a motor (0,1,q): ")
+	if motor == "q":
+		arbot.shut_down()
+	else:
+		mode = input("Select a mode (p,v): ")
+		arbot.control_motors(motor,mode)
 
 

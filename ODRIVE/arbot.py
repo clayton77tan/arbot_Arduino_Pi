@@ -102,7 +102,7 @@ def shut_down():
 	J1.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
 	J0.controller.move_to_pos(0)
 	J1.controller.move_to_pos(0)
-	time.sleep(15)
+	time.sleep(3)
 	sys.exit(0)
 
 
