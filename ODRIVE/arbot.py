@@ -97,3 +97,12 @@ def control_motors(motor, mode):
 				else:
 					J1.controller.move_to_pos(position)
 
+def shut_down():
+	J0.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
+	J1.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
+	J0.controller.move_to_pos(0)
+	J1.controller.move_to_pos(0)
+	time.sleep(15)
+	sys.exit(0)
+
+
