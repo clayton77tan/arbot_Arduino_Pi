@@ -74,7 +74,8 @@ def control_motors(motor, mode):
 				if(position == "q"):
 					break
 				else:
-					J0.controller.pos_setpoint = position
+					J0.controller.move_to_pos(position)
+					
 
 	elif (motor == "1"):
 		J1.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
@@ -94,5 +95,5 @@ def control_motors(motor, mode):
 				if(position == "q"):
 					break
 				else:
-					J1.controller.pos_setpoint = position
+					J1.controller.move_to_pos(position)
 
