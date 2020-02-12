@@ -70,11 +70,11 @@ def control_motors(motor, mode):
 		elif (mode == "p"):
 			J0.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
 			while True:
-				position = input("Set position (count) or 'q' to quit position mode: ")
+				position = input("Set angle (degrees) or 'q' to quit position mode: ")
 				if(position == "q"):
 					break
 				else:
-					J0.controller.move_to_pos(position)
+					J0.controller.move_to_pos(angle_count(position))
 					
 
 	elif (motor == "1"):
@@ -91,12 +91,16 @@ def control_motors(motor, mode):
 		elif (mode == "p"):
 			J1.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
 			while True:
-				position = input("Set position (count) or 'q' to quit position mode: ")
+				position = input("Set angle (degrees) or 'q' to quit position mode: ")
 				if(position == "q"):
 					break
 				else:
-					J1.controller.move_to_pos(position)
-
+					J1.controller.move_to_pos(angle_count(position))
+					
+def angle_count(angle):
+	count = float(angle) // -4.09
+	return count
+	
 def shut_down():
 	J0.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
 	J1.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
