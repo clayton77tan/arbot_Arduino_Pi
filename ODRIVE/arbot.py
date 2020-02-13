@@ -61,12 +61,12 @@ def control_motors(motor, mode):
 		if (mode == "v"):
 			J0.controller.config.control_mode = CTRL_MODE_VELOCITY_CONTROL
 			while True:
-				speed = input("Set speed (counts/s) or 'q' to quit velocity mode: ")
+				speed = input("Set speed (angles/s) or 'q' to quit velocity mode: ")
 				if(speed == "q"):
 					J0.controller.vel_setpoint = 0
 					break
 				else:
-					J0.controller.vel_setpoint = speed
+					J0.controller.vel_setpoint = angle_count(speed)
 		elif (mode == "p"):
 			J0.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
 			while True:
@@ -82,12 +82,12 @@ def control_motors(motor, mode):
 		if (mode == "v"):
 			J1.controller.config.control_mode = CTRL_MODE_VELOCITY_CONTROL
 			while True:
-				speed = input("Set speed (counts/s) or 'q' to quit velocity mode: ")
+				speed = input("Set speed (angles/s) or 'q' to quit velocity mode: ")
 				if(speed == "q"):
 					J1.controller.vel_setpoint = 0
 					break
 				else:
-					J1.controller.vel_setpoint = speed
+					J1.controller.vel_setpoint = angle_count(speed)
 		elif (mode == "p"):
 			J1.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
 			while True:
