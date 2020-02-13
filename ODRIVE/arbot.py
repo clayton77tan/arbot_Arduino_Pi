@@ -52,58 +52,36 @@ def calibration(motors):
 		time.sleep(15)
 
 
-## This option will allow the user to input the motor (0 or 1) and the mode to execute (v or p).
-# Inside they will be continously asked to input the velocity of the motor or the position in
-# units of counts. 
-def control_motors(motor, mode):
+## This option will allow the user to input the motor (0 or 1).
+# Inside they will be continously asked to input the position in units of counts. 
+def control_motors(motor):
 	if (motor == "0"):
 		J0.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
-		if (mode == "v"):
-			J0.controller.config.control_mode = CTRL_MODE_VELOCITY_CONTROL
-			while True:
-				speed = input("Set speed (angles/s) or 'q' to quit velocity mode: ")
-				if(speed == "q"):
-					J0.controller.vel_setpoint = 0
-					break
-				else:
-					J0.controller.vel_setpoint = angle_count(speed)
-		elif (mode == "p"):
-			J0.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
-			while True:
-				position = input("Set angle (degrees) or 'q' to quit position mode: ")
-				if(position == "q"):
-					break
-				else:
-					J0.controller.move_to_pos(angle_count(position))
-					
-
+		J0.controller.config.control_mode = CTRL_MODE_TRAJECTORY_CONTROL
+		while True:
+			position = input("Set angle (degrees) or 'q' to change motor control: ")
+			if(position == "q"):
+				break
+			else:
+				J0.controller.move_to_pos(angle_count(position))
+				
 	elif (motor == "1"):
 		J1.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
-		if (mode == "v"):
-			J1.controller.config.control_mode = CTRL_MODE_VELOCITY_CONTROL
-			while True:
-				speed = input("Set speed (angles/s) or 'q' to quit velocity mode: ")
-				if(speed == "q"):
-					J1.controller.vel_setpoint = 0
-					break
-				else:
-					J1.controller.vel_setpoint = angle_count(speed)
-		elif (mode == "p"):
-			J1.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
-			while True:
-				position = input("Set angle (degrees) or 'q' to quit position mode: ")
-				if(position == "q"):
-					break
-				else:
-					J1.controller.move_to_pos(angle_count(position))
+		J1.controller.config.control_mode = CTRL_MODE_TRAJECTORY_CONTROL
+		while True:
+			position = input("Set angle (degrees) or 'q' to change motor control: ")
+			if(position == "q"):
+				break
+			else:
+				J1.controller.move_to_pos(angle_count(position))
 					
 def angle_count(angle):
 	count = float(angle) // -4.09
 	return count
 	
 def shut_down():
-	J0.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
-	J1.controller.config.control_mode = CTRL_MODE_POSITION_CONTROL
+	J0.controller.config.control_mode = CTRL_MODE_TRAJECTORY_CONTROL
+	J1.controller.config.control_mode = CTRL_MODE_TRAJECTORY_CONTROL
 	J0.controller.move_to_pos(0)
 	J1.controller.move_to_pos(0)
 	time.sleep(3)
