@@ -11,6 +11,8 @@ import sys
 def search_odrive(): # connect to odrive
 	print("Searching . . . ")
 	global od, J0, J1
+	global Listcount
+	global angleList = []
 	od = odrive.find_any() # search for the Odrive (may take about 6 seconds)
 	J0 = od.axis0 # set J2 to axis1 to control the next motor
 	J1 = od.axis1 # set J2 to axis1 to control the next motor
@@ -30,13 +32,20 @@ def control_motors(angle):
 	J1.controller.config.control_mode = CTRL_MODE_TRAJECTORY_CONTROL
 	J1.controller.move_to_pos(angle_count(angle))
 
+pub = rospy.Publisher('chatter', String,queue_size = 10)
+
 def callback(data): # ROS receive angles and drive motor
     str1 = data.data
     listx= [int(s) for s in str1.split() if s.isdigit()]
     for inty in listx:
-        angle = inty
-        
-    rospy.loginfo(rospy.get_caller_id() + ' Joint Angle: %s', angle)
+        listAngle = inty
+    angleList.append(listAngle)
+    Listcount = Listcount + 1
+
+    rospy.loginfo(rospy.get_caller_id() + ' Joint Angle: %s', listAngle)
+    
+    for intangle in listAngle:
+		angle = intangle
     control_motors(angle)
 
 def listener():
@@ -45,8 +54,13 @@ def listener():
 
     rospy.Subscriber('echo', String, callback)
 
-    # spin() simply keeps python from exiting until this node is stopped
-    rospy.spin()
+    # # spin() simply keeps python from exiting until this node is stopped
+    # rospy.spin()
+    
+    if (Listcount == 10):
+		received_str = "Received Array"
+		rospy.loginfo(received_str)
+		pub.publish(received_str)
 
 if __name__ == '__main__':
 	search_odrive()
