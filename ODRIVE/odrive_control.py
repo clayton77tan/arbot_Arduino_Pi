@@ -13,5 +13,3 @@ while True:
 		arbot.shut_down()
 	else:
 		arbot.control_motors(motor)
-
-
