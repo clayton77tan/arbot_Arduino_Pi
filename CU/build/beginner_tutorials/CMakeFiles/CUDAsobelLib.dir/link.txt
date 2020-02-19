@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/arbot/catkin_ws/devel/lib/libCUDAsobelLib.a  CMakeFiles/CUDAsobelLib.dir/src/CUDAsobelLib_generated_helloworld.cu.o
+/usr/bin/ranlib /home/arbot/catkin_ws/devel/lib/libCUDAsobelLib.a
