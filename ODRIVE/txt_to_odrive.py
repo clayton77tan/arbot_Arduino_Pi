@@ -1,3 +1,5 @@
+import linecache
+
 def search_odrive(): # connect to odrive
 	print("Searching . . . ")
 	global od, J0, J1
@@ -18,9 +20,12 @@ def control_motors(angle):
 #search_odrive() # find odrive
 
 while True:
-	file1 = open("/home/arbot/arbot_arduino/ODRIVE/file.txt", "r") # open txt file
-	anglestr = file1.readline() # read the line of the txt file
-	anglelist = anglestr.split(',') # split the string into a list
+	anglestr = linecache.getline("/home/arbot/arbot_arduino/ODRIVE/JointAngles.txt", linenum)
+            
+        with open("/home/arbot/arbot_arduino/ODRIVE/JointAngles.txt", "w") # open txt file
+            
+
+        anglelist = anglestr.split(',') # split the string into a list
 	angle0 = float(anglelist[0]) # split list into a float
 	angle1 = float(anglelist[1]) # split list into a float
 	angle2 = float(anglelist[2]) # split list into a float
