@@ -22,33 +22,48 @@ def control_motors(angle):
 #search_odrive() # find odrive
 
 while True:
-	file1 = open("/home/arbot/arbot_Arduino_Pi/ODRIVE/file.txt", "r") # open txt file
-	file1.seek(0,0)
-	anglestr = file1.readline() # read the line of the txt file
-	if not anglestr:
-		with open("/home/arbot/arbot_Arduino_Pi/ODRIVE/file.txt", 'r') as filein:
-			text = filein.read().splitlines(True)
-		with open("/home/arbot/arbot_Arduino_Pi/ODRIVE/file.txt", 'w') as fileout:
-			fileout.writelines(text[1:])
-		time.sleep(0.1)
-		continue
-
-	if anglestr:
-		with open("/home/arbot/arbot_Arduino_Pi/ODRIVE/file.txt", 'r') as filein:
-			text = filein.read().splitlines(True)
-		with open("/home/arbot/arbot_Arduino_Pi/ODRIVE/file.txt", 'w') as fileout:
-			fileout.writelines(text[1:])
+	file2 = open("/home/arbot/arbot_Arduino_Pi/ODRIVE/protocol.txt", "r")
+	file2.seek(0,0)
+	protocol = file2.readline()
+	
+	if(protocol == "stop"):
+		file1 = open("/home/arbot/arbot_Arduino_Pi/ODRIVE/angle.txt", "r") # open txt file
+		file1.seek(0,0)
+		anglestr = file1.readline() # read the line of the txt file
+		if not anglestr:
+			with open("/home/arbot/arbot_Arduino_Pi/ODRIVE/angle.txt", 'r') as filein1:
+				text = filein1.read().splitlines(True)
+			with open("/home/arbot/arbot_Arduino_Pi/ODRIVE/angle.txt", 'w') as fileout1:
+				fileout1.writelines(text[1:])
+				
+			with open("/home/arbot/arbot_Arduino_Pi/ODRIVE/protocol.txt", 'r') as filein2:
+				pro = filein2.read().splitlines(True)
+			with open("/home/arbot/arbot_Arduino_Pi/ODRIVE/protocol.txt", 'w') as fileout2:
+				fileout2.writelines(pro[1:])
+				
+			file2 = open("/home/arbot/arbot_Arduino_Pi/ODRIVE/protocol.txt", "w")
+			file2.seek(0,0)
+			file2.write("continue")
+				
+			time.sleep(0.1)
+			continue
 		
-		anglelist = anglestr.split(',') # split the string into a list
-		angle0 = float(anglelist[0]) # split list into a float
-		angle1 = float(anglelist[1]) # split list into a float
-		angle2 = float(anglelist[2]) # split list into a float
-		angle3 = float(anglelist[3]) # split list into a float
-		print(str(angle0) + "\n")
-		print(str(angle1) + "\n")
-		print(str(angle2) + "\n")
-		print(str(angle3) + "\n")
-
+		if (anglestr):
+			with open("/home/arbot/arbot_Arduino_Pi/ODRIVE/angle.txt", 'r') as filein1:
+				text = filein1.read().splitlines(True)
+			with open("/home/arbot/arbot_Arduino_Pi/ODRIVE/angle.txt", 'w') as fileout1:
+				fileout1.writelines(text[1:])
+			
+			anglelist = anglestr.split(',') # split the string into a list
+			angle0 = float(anglelist[0]) # split list into a float
+			angle1 = float(anglelist[1]) # split list into a float
+			angle2 = float(anglelist[2]) # split list into a float
+			angle3 = float(anglelist[3]) # split list into a float
+			
+			print(str(angle0) + "\n")
+			print(str(angle1) + "\n")
+			print(str(angle2) + "\n")
+			print(str(angle3) + "\n")
 				
 	
 		# file1.close()
