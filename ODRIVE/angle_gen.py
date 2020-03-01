@@ -4,7 +4,7 @@ while True:
 	file2 = open("/home/arbot/arbot_Arduino_Pi/ODRIVE/protocol.txt", "r")
 	file2.seek(0,0)
 	
-	if(flag == 1 or file2.readline() == "continue"):
+	if(flag == 1 or file2.readline() == "continue\n"):
 		flag = 0
 		count = 1
 		file1 = open("/home/arbot/arbot_Arduino_Pi/ODRIVE/angle.txt", "w")
@@ -19,5 +19,5 @@ while True:
 		if (count > 12):
 			file2 = open("/home/arbot/arbot_Arduino_Pi/ODRIVE/protocol.txt", "w")
 			file2.seek(0,0)
-			file2.write("stop")
+			file2.write("stop\n")
 		file1.close()

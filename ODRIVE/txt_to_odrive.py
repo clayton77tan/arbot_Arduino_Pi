@@ -46,7 +46,7 @@ while True:
 	file2.seek(0,0)
 	protocol = file2.readline()
 	
-	if(protocol == "stop"):
+	if(protocol == "stop\n"):
 		file1 = open("/home/arbot/arbot_Arduino_Pi/ODRIVE/angle.txt", "r") # open txt file
 		file1.seek(0,0)
 		anglestr = file1.readline() # read the line of the txt file
@@ -61,9 +61,9 @@ while True:
 			with open("/home/arbot/arbot_Arduino_Pi/ODRIVE/protocol.txt", 'w') as fileout2:
 				fileout2.writelines(pro[1:])
 				
-			file2 = open("/home/arbot/arbot_Arduino_Pi/ODRIVE/protocol.txt", "w")
-			file2.seek(0,0)
-			file2.write("continue")
+			# file2 = open("/home/arbot/arbot_Arduino_Pi/ODRIVE/protocol.txt", "w")
+			# file2.seek(0,0)
+			# file2.write("continue\n")
 				
 			time.sleep(0.1)
 			continue
