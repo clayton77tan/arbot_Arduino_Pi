@@ -3,7 +3,7 @@ import time
 import threading
 
 count = 1
-file1 = open("/home/clstan/arbot_Arduino_Pi/ODRIVE/angle.txt", "w")
+file1 = open("/home/arbot/arbot_Arduino_Pi/ODRIVE/angle.txt", "w")
 file1.seek(0,0)
 flag = 10000
 
