@@ -14,7 +14,7 @@ while True:
 		if(math.fmod(count,5) != 0):
 			file1.write(str(count) + ",") # separate by ','
 		elif(math.fmod(count,5) == 0):
-			file1.write(str(5 + incre) + "\n") # separate by '\n' every 5th number
+			file1.write(str(2 + incre) + "\n") # separate by '\n' every 5th number
 		count = count + 1 # increment the count
 	if(count > 300): # check if the count has reached 100
 		incre = incre + 1 # increment time
