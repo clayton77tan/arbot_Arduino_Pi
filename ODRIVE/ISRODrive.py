@@ -15,6 +15,7 @@ time = []
 index = 0
 timeIndex = 0
 processedTime = []
+angleIndex = 0
 
 # fucntion for subtracting 1 sec from time
 def process_time(staticTime):
@@ -34,14 +35,24 @@ while True:
 	
 	textlist = textstr.split(',') # split the string into a list
 
-	if(textlist[0]): # check if textlist is empty or not
-		angle.append(textlist[0:4]) # append to angle list
+	if(textlist[0] and textlist[0] != '\n'): # check if textlist is empty or not
+		txt = textlist[0:4]
+		listtext = [int(z) for z in txt]
+		angle.append(listtext) # append to angle list
 		time.append(textlist[4:5]) # append to time list
 		index = index + 1 # counter for each line read
 	
 	timelist = [''.join(line) for line in time] # make list of list into one list
 	newtime = [new[:-1] for new in timelist] # get rid of \n
 	listtime = [int(x) for x in newtime] # make list items from str to int
+	
+	
+	# print(angle)
+	# if(angleIndex != len(angle)):
+		# listangle = [int(y[angleIndex]) for y[angleIndex] in angle[angleIndex][:]] # make list items from str to int
+		# angleIndex = angleIndex + 1
+		# print(listangle)
+	# print(angle[0][:])
 	
 	if(math.fmod(index,20) == 0): # check if script has read 20 lines from txt file
 		delay = threading.Event() # clear a dummy event
@@ -56,10 +67,13 @@ while True:
 			time = time[20:] # pop the first 20 values off the time list to ensure it doesn't rewrite ther values again
 			
 			# process the first 20 joint angles
+			print(angle[0:20][:])
+			angle = angle[20:][:]
 			
 			
-		print("processed: " + str(processedTime))
-	print("list: " + str(listtime))
+			
+		# print("processed: " + str(processedTime))
+	# print("list: " + str(listtime))
 		
 
 	# read the entire text file to pop the current line off the text file
