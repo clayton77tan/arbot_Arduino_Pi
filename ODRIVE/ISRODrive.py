@@ -47,13 +47,6 @@ while True:
 	listtime = [int(x) for x in newtime] # make list items from str to int
 	
 	
-	# print(angle)
-	# if(angleIndex != len(angle)):
-		# listangle = [int(y[angleIndex]) for y[angleIndex] in angle[angleIndex][:]] # make list items from str to int
-		# angleIndex = angleIndex + 1
-		# print(listangle)
-	# print(angle[0][:])
-	
 	if(math.fmod(index,20) == 0): # check if script has read 20 lines from txt file
 		delay = threading.Event() # clear a dummy event
 		delay.wait(1) # 1 sec delay
@@ -69,11 +62,6 @@ while True:
 			# process the first 20 joint angles
 			print(angle[0:20][:])
 			angle = angle[20:][:]
-			
-			
-			
-		# print("processed: " + str(processedTime))
-	# print("list: " + str(listtime))
 		
 
 	# read the entire text file to pop the current line off the text file
