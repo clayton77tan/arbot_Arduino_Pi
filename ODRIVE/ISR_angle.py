@@ -18,8 +18,8 @@ while True:
 		count = count + 1 # increment the count
 	if(count > 300): # check if the count has reached 100
 		incre = incre + 1 # increment time
-		# while(flag > 1): # blocking delay to reset count back to 1
-			# flag = flag - 1
-		# count = 1 # reset count to 1
-		# flag = 10000 # reset the flag
-		break
+		while(flag > 1): # blocking delay to reset count back to 1
+			flag = flag - 1
+		count = 1 # reset count to 1
+		flag = 10000 # reset the flag
+		# break

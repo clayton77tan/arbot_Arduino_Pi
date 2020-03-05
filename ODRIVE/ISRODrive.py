@@ -58,7 +58,6 @@ while True:
 
 
 	if(math.fmod(index,20) == 0): # check if script has read 20 lines from txt file
-		print("in mod")
 		delay = threading.Event() # clear a dummy event
 		delay.wait(1) # 1 sec delay
 		
@@ -74,7 +73,7 @@ while True:
 			processedTime = processedTime[20:] # pop the first 20 values off the processedTime list
 			time = time[20:] # pop the first 20 values off the time list to ensure it doesn't rewrite ther values again
 			# process the first 20 joint angles
-			while(angleODrive < 20):
+			while(angleODrive < 20 and angle):
 				print(str(angle[0][0]) + ',' +str(angle[0][1]) + ',' +str(angle[0][2]) + ',' +str(angle[0][3]))
 				# print(str(angle[0][0]))
 				# print(str(angle[0][1]))
