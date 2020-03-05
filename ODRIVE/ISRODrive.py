@@ -16,6 +16,8 @@ index = 0
 timeIndex = 0
 processedTime = []
 angleIndex = 0
+angleODrive = 0
+
 
 # fucntion for subtracting 1 sec from time
 def process_time(staticTime):
@@ -60,8 +62,11 @@ while True:
 			time = time[20:] # pop the first 20 values off the time list to ensure it doesn't rewrite ther values again
 			
 			# process the first 20 joint angles
-			print(angle[0:20][:])
-			angle = angle[20:][:]
+			while(angleODrive < 20):
+				print(angle[0][:])
+				angle = angle[1:][:]
+				angleODrive = angleODrive + 1
+			angleODrive = 0
 		
 
 	# read the entire text file to pop the current line off the text file
