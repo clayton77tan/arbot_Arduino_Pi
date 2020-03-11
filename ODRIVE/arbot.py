@@ -56,6 +56,9 @@ def calibration(motors):
 # Inside they will be continously asked to input the position in units of counts. 
 def control_motors(motor):
 	if (motor == "0"):
+		J0.controller.pos_setpoint = 0
+		J0.controller.vel_setpoint = 0
+		J0.controller.move_to_pos(0)
 		J0.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
 		J0.controller.config.control_mode = CTRL_MODE_TRAJECTORY_CONTROL
 		while True:
@@ -66,6 +69,9 @@ def control_motors(motor):
 				J0.controller.move_to_pos(angle_count(position))
 				
 	elif (motor == "1"):
+		J1.controller.pos_setpoint = 0
+		J1.controller.vel_setpoint = 0
+		J1.controller.move_to_pos(0)
 		J1.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
 		J1.controller.config.control_mode = CTRL_MODE_TRAJECTORY_CONTROL
 		while True:
