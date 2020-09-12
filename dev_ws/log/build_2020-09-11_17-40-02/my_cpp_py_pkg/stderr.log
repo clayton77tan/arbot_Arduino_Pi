@@ -1,0 +1,4 @@
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:[m[K In member function ‘[01m[Kvoid MinimalPublisher::timer_callback()[m[K’:
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:34:80:[m[K [01;35m[Kwarning: [m[Koperation on ‘[01m[K((MinimalPublisher*)this)->MinimalPublisher::count_[m[K’ may be undefined [[01;35m[K-Wsequence-point[m[K]
+   34 |    message.data = '[' + std::to_string(count_++) + ',' + std::to_string([01;35m[K(count_++)[m[K) + ']';
+      |                                                                         [01;35m[K~~~~~~~^~~[m[K

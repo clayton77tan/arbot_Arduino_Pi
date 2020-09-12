@@ -1,0 +1,53 @@
+[0.000000] (-) TimerEvent: {}
+[0.001808] (my_cpp_py_pkg) JobQueued: {'identifier': 'my_cpp_py_pkg', 'dependencies': OrderedDict()}
+[0.001890] (my_cpp_py_pkg) JobStarted: {'identifier': 'my_cpp_py_pkg'}
+[0.034602] (my_cpp_py_pkg) JobProgress: {'identifier': 'my_cpp_py_pkg', 'progress': 'cmake'}
+[0.034929] (my_cpp_py_pkg) Command: {'cmd': ['/usr/bin/cmake', '/home/arbot/dev_ws/src/my_cpp_py_pkg', '-DCMAKE_INSTALL_PREFIX=/home/arbot/dev_ws/install/my_cpp_py_pkg'], 'cwd': '/home/arbot/dev_ws/build/my_cpp_py_pkg', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'arbot'), ('SSH_AGENT_PID', '1503'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('QT4_IM_MODULE', 'ibus'), ('HOME', '/home/arbot'), ('OLDPWD', '/home/arbot'), ('DESKTOP_SESSION', 'ubuntu'), ('RTI_LICENSE_FILE', 'path/to/rti_license.dat'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1294'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'arbot'), ('JOURNAL_STREAM', '9:31051'), ('_', '/usr/bin/colcon'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'arbot'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('WINDOWPATH', '2'), ('PATH', '/home/arbot/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/arbot-VirtualBox:@/tmp/.ICE-unix/1579,unix/arbot-VirtualBox:/tmp/.ICE-unix/1579'), ('INVOCATION_ID', '7141e78f72434bcabb54748cde38dbeb'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/97f3d93d_4362_4565_bcb3_72d29243e51e'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.109'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/arbot/dev_ws/build/my_cpp_py_pkg'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CLUTTER_IM_MODULE', 'ibus'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('COLCON', '1'), ('VTE_VERSION', '6001')]), 'shell': False}
+[0.098298] (-) TimerEvent: {}
+[0.198807] (-) TimerEvent: {}
+[0.299293] (-) TimerEvent: {}
+[0.399824] (-) TimerEvent: {}
+[0.463600] (my_cpp_py_pkg) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.3.0\n'}
+[0.499984] (-) TimerEvent: {}
+[0.600604] (-) TimerEvent: {}
+[0.701100] (-) TimerEvent: {}
+[0.735997] (my_cpp_py_pkg) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.3.0\n'}
+[0.753528] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc\n'}
+[0.801377] (-) TimerEvent: {}
+[0.845701] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc -- works\n'}
+[0.848848] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.901745] (-) TimerEvent: {}
+[0.939487] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.970095] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.971712] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.979416] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++\n'}
+[1.002158] (-) TimerEvent: {}
+[1.081421] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ -- works\n'}
+[1.083237] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.102466] (-) TimerEvent: {}
+[1.203962] (-) TimerEvent: {}
+[1.218213] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.252588] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.255246] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.271342] (my_cpp_py_pkg) StderrLine: {'line': b'CMake Error at CMakeLists.txt:14 (find_package):\n'}
+[1.271595] (my_cpp_py_pkg) StderrLine: {'line': b'  By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project\n'}
+[1.271733] (my_cpp_py_pkg) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[1.271894] (my_cpp_py_pkg) StderrLine: {'line': b'  "ament_cmake", but CMake did not find one.\n'}
+[1.272018] (my_cpp_py_pkg) StderrLine: {'line': b'\n'}
+[1.272145] (my_cpp_py_pkg) StderrLine: {'line': b'  Could not find a package configuration file provided by "ament_cmake" with\n'}
+[1.272272] (my_cpp_py_pkg) StderrLine: {'line': b'  any of the following names:\n'}
+[1.272437] (my_cpp_py_pkg) StderrLine: {'line': b'\n'}
+[1.272565] (my_cpp_py_pkg) StderrLine: {'line': b'    ament_cmakeConfig.cmake\n'}
+[1.272691] (my_cpp_py_pkg) StderrLine: {'line': b'    ament_cmake-config.cmake\n'}
+[1.272856] (my_cpp_py_pkg) StderrLine: {'line': b'\n'}
+[1.273000] (my_cpp_py_pkg) StderrLine: {'line': b'  Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set\n'}
+[1.273128] (my_cpp_py_pkg) StderrLine: {'line': b'  "ament_cmake_DIR" to a directory containing one of the above files.  If\n'}
+[1.273254] (my_cpp_py_pkg) StderrLine: {'line': b'  "ament_cmake" provides a separate development package or SDK, be sure it\n'}
+[1.273379] (my_cpp_py_pkg) StderrLine: {'line': b'  has been installed.\n'}
+[1.273536] (my_cpp_py_pkg) StderrLine: {'line': b'\n'}
+[1.273737] (my_cpp_py_pkg) StderrLine: {'line': b'\n'}
+[1.276499] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[1.276771] (my_cpp_py_pkg) StdoutLine: {'line': b'See also "/home/arbot/dev_ws/build/my_cpp_py_pkg/CMakeFiles/CMakeOutput.log".\n'}
+[1.281861] (my_cpp_py_pkg) CommandEnded: {'returncode': 1}
+[1.282417] (my_cpp_py_pkg) JobEnded: {'identifier': 'my_cpp_py_pkg', 'rc': 1}
+[1.292498] (-) EventReactorShutdown: {}

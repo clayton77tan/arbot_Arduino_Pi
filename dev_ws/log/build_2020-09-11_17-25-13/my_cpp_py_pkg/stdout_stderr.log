@@ -1,0 +1,10 @@
+[35m[1mScanning dependencies of target cpp_executable[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/cpp_executable.dir/src/cpp_node.cpp.o[0m
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:[m[K In member function ‘[01m[Kvoid MinimalPublisher::timer_callback()[m[K’:
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:36:86:[m[K [01;31m[Kerror: [m[Kinitializer fails to determine size of ‘[01m[Kstr[m[K’
+   36 |    char str[] = [01;31m[K'['+ ran[0] + ',' + ran[1] + ',' + ran[2] + ',' + ran[3] +','+ran[4] +']'[m[K;
+      |                 [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~[m[K
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:36:86:[m[K [01;31m[Kerror: [m[Karray must be initialized with a brace-enclosed initializer
+make[2]: *** [CMakeFiles/cpp_executable.dir/build.make:63: CMakeFiles/cpp_executable.dir/src/cpp_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/cpp_executable.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
