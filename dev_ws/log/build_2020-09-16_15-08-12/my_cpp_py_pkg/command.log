@@ -1,0 +1,4 @@
+Invoking command in '/home/arbot/dev_ws/build/my_cpp_py_pkg': /usr/bin/cmake --build /home/arbot/dev_ws/build/my_cpp_py_pkg -- -j1 -l1
+Invoked command in '/home/arbot/dev_ws/build/my_cpp_py_pkg' returned '0': /usr/bin/cmake --build /home/arbot/dev_ws/build/my_cpp_py_pkg -- -j1 -l1
+Invoking command in '/home/arbot/dev_ws/build/my_cpp_py_pkg': /usr/bin/cmake --install /home/arbot/dev_ws/build/my_cpp_py_pkg
+Invoked command in '/home/arbot/dev_ws/build/my_cpp_py_pkg' returned '0': /usr/bin/cmake --install /home/arbot/dev_ws/build/my_cpp_py_pkg

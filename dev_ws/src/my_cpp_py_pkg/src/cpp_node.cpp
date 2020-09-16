@@ -23,14 +23,21 @@ class MinimalPublisher : public rclcpp::Node
 		{
 			publisher_ = this->create_publisher<std_msgs::msg::String>("topic", 10);
 			timer_ = this->create_wall_timer(
-					100ms, std::bind(&MinimalPublisher::timer_callback, this));
+					1000ms, std::bind(&MinimalPublisher::timer_callback, this));
 		}
 
 	private:
 		void timer_callback()
 		{
+			srand (time(NULL));
+			
+			int arr[5]={};
+			for(int i = 0; i< 5;i++){
+				arr[i] = rand() % 100 + 1;
+			}
+
 			auto message = std_msgs::msg::String();
-			message.data = to_string(count_++) + ", " + to_string(count_ + 1) + ", " + to_string(count_ + 2) + ", " + to_string(count_ + 3) + ", " + to_string(count_ + 4);
+			message.data = to_string(arr[0]) + ", " + to_string(arr[1]) + ", " + to_string(arr[2]) + ", " + to_string(arr[3]) + ", " + to_string(arr[4]);
 			RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
 			publisher_->publish(message);
 		}
