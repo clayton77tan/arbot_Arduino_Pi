@@ -16,6 +16,21 @@ class MinimalSubscriber(Node):
 
     def listener_callback(self, msg): # callback is msg
         self.get_logger().info('I heard: "%s"' % msg.data) # msg.data is the message we get
+	
+
+        num = msg.data.split(',') # split the string into a list
+        time = float(num[0])
+        angle0 = float(num[1]) # split list into a float
+        angle1 = float(num[2]) # split list into a float
+        angle2 = float(num[3]) # split list into a float
+        angle3 = float(num[4]) # split list into a float
+
+
+        #print(time)
+        #print(angle0)
+        #print(angle1)
+        #print(angle2)
+        #print(angle3)
 
 def main(args=None):
     rclpy.init(args=args) # initializes rclpy

@@ -1,0 +1,182 @@
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:[m[K In member function ‘[01m[Kvoid MinimalPublisher::timer_callback()[m[K’:
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:54:65:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator+[m[K’ (operand types are ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’ and ‘[01m[K<unresolved overloaded function type>[m[K’)
+   54 |       message.data = [01;31m[Kmessage.data + ", " + to_string(arr[k][l]) + endl[m[K;
+      |                      [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:67[m[K,
+                 from [01m[K/usr/include/c++/9/bits/char_traits.h:39[m[K,
+                 from [01m[K/usr/include/c++/9/string:40[m[K,
+                 from [01m[K/usr/include/c++/9/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/9/array:39[m[K,
+                 from [01m[K/usr/include/c++/9/tuple:39[m[K,
+                 from [01m[K/usr/include/c++/9/functional:54[m[K,
+                 from [01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:2[m[K:
+[01m[K/usr/include/c++/9/bits/stl_iterator.h:423:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Iterator> std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)[m[K’
+  423 |     [01;36m[Koperator[m[K+(typename reverse_iterator<_Iterator>::difference_type __n,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/stl_iterator.h:423:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:54:67:[m[K [01;36m[Knote: [m[K  couldn’t deduce template parameter ‘[01m[K_Iterator[m[K’
+   54 |       message.data = message.data + ", " + to_string(arr[k][l]) + [01;36m[Kendl[m[K;
+      |                                                                   [01;36m[K^~~~[m[K
+In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:67[m[K,
+                 from [01m[K/usr/include/c++/9/bits/char_traits.h:39[m[K,
+                 from [01m[K/usr/include/c++/9/string:40[m[K,
+                 from [01m[K/usr/include/c++/9/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/9/array:39[m[K,
+                 from [01m[K/usr/include/c++/9/tuple:39[m[K,
+                 from [01m[K/usr/include/c++/9/functional:54[m[K,
+                 from [01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:2[m[K:
+[01m[K/usr/include/c++/9/bits/stl_iterator.h:1219:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Iterator> std::move_iterator<_IteratorL> std::operator+(typename std::move_iterator<_IteratorL>::difference_type, const std::move_iterator<_IteratorL>&)[m[K’
+ 1219 |     [01;36m[Koperator[m[K+(typename move_iterator<_Iterator>::difference_type __n,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/stl_iterator.h:1219:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:54:67:[m[K [01;36m[Knote: [m[K  couldn’t deduce template parameter ‘[01m[K_Iterator[m[K’
+   54 |       message.data = message.data + ", " + to_string(arr[k][l]) + [01;36m[Kendl[m[K;
+      |                                                                   [01;36m[K^~~~[m[K
+In file included from [01m[K/usr/include/c++/9/string:55[m[K,
+                 from [01m[K/usr/include/c++/9/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/9/array:39[m[K,
+                 from [01m[K/usr/include/c++/9/tuple:39[m[K,
+                 from [01m[K/usr/include/c++/9/functional:54[m[K,
+                 from [01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:2[m[K:
+[01m[K/usr/include/c++/9/bits/basic_string.h:6020:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>][m[K’
+ 6020 |     [01;36m[Koperator[m[K+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6021:53:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[K<unresolved overloaded function type>[m[K’ to ‘[01m[Kconst std::__cxx11::basic_string<char>&[m[K’
+ 6021 |        [01;36m[Kconst basic_string<_CharT, _Traits, _Alloc>& __rhs[m[K)
+      |        [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+In file included from [01m[K/usr/include/c++/9/string:56[m[K,
+                 from [01m[K/usr/include/c++/9/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/9/array:39[m[K,
+                 from [01m[K/usr/include/c++/9/tuple:39[m[K,
+                 from [01m[K/usr/include/c++/9/functional:54[m[K,
+                 from [01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:2[m[K:
+[01m[K/usr/include/c++/9/bits/basic_string.tcc:1158:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)[m[K’
+ 1158 |     [01;36m[Koperator[m[K+(const _CharT* __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.tcc:1158:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:54:67:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst _CharT*[m[K’ and ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’
+   54 |       message.data = message.data + ", " + to_string(arr[k][l]) + [01;36m[Kendl[m[K;
+      |                                                                   [01;36m[K^~~~[m[K
+In file included from [01m[K/usr/include/c++/9/string:56[m[K,
+                 from [01m[K/usr/include/c++/9/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/9/array:39[m[K,
+                 from [01m[K/usr/include/c++/9/tuple:39[m[K,
+                 from [01m[K/usr/include/c++/9/functional:54[m[K,
+                 from [01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:2[m[K:
+[01m[K/usr/include/c++/9/bits/basic_string.tcc:1174:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)[m[K’
+ 1174 |     [01;36m[Koperator[m[K+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.tcc:1174:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:54:67:[m[K [01;36m[Knote: [m[K  couldn’t deduce template parameter ‘[01m[K_Traits[m[K’
+   54 |       message.data = message.data + ", " + to_string(arr[k][l]) + [01;36m[Kendl[m[K;
+      |                                                                   [01;36m[K^~~~[m[K
+In file included from [01m[K/usr/include/c++/9/string:55[m[K,
+                 from [01m[K/usr/include/c++/9/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/9/array:39[m[K,
+                 from [01m[K/usr/include/c++/9/tuple:39[m[K,
+                 from [01m[K/usr/include/c++/9/functional:54[m[K,
+                 from [01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:2[m[K:
+[01m[K/usr/include/c++/9/bits/basic_string.h:6057:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>][m[K’
+ 6057 |     [01;36m[Koperator[m[K+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6058:22:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[K<unresolved overloaded function type>[m[K’ to ‘[01m[Kconst char*[m[K’
+ 6058 |        [01;36m[Kconst _CharT* __rhs[m[K)
+      |        [01;36m[K~~~~~~~~~~~~~~^~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6073:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, _CharT) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>][m[K’
+ 6073 |     [01;36m[Koperator[m[K+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6073:74:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[K<unresolved overloaded function type>[m[K’ to ‘[01m[Kchar[m[K’
+ 6073 |     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, [01;36m[K_CharT __rhs[m[K)
+      |                                                                   [01;36m[K~~~~~~~^~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6085:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>][m[K’
+ 6085 |     [01;36m[Koperator[m[K+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6086:53:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[K<unresolved overloaded function type>[m[K’ to ‘[01m[Kconst std::__cxx11::basic_string<char>&[m[K’
+ 6086 |        [01;36m[Kconst basic_string<_CharT, _Traits, _Alloc>& __rhs[m[K)
+      |        [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6091:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>][m[K’
+ 6091 |     [01;36m[Koperator[m[K+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6092:48:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[K<unresolved overloaded function type>[m[K’ to ‘[01m[Kstd::__cxx11::basic_string<char>&&[m[K’
+ 6092 |        [01;36m[Kbasic_string<_CharT, _Traits, _Alloc>&& __rhs[m[K)
+      |        [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6097:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>][m[K’
+ 6097 |     [01;36m[Koperator[m[K+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6098:48:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[K<unresolved overloaded function type>[m[K’ to ‘[01m[Kstd::__cxx11::basic_string<char>&&[m[K’
+ 6098 |        [01;36m[Kbasic_string<_CharT, _Traits, _Alloc>&& __rhs[m[K)
+      |        [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6109:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)[m[K’
+ 6109 |     [01;36m[Koperator[m[K+(const _CharT* __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6109:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:54:67:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst _CharT*[m[K’ and ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’
+   54 |       message.data = message.data + ", " + to_string(arr[k][l]) + [01;36m[Kendl[m[K;
+      |                                                                   [01;36m[K^~~~[m[K
+In file included from [01m[K/usr/include/c++/9/string:55[m[K,
+                 from [01m[K/usr/include/c++/9/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/9/array:39[m[K,
+                 from [01m[K/usr/include/c++/9/tuple:39[m[K,
+                 from [01m[K/usr/include/c++/9/functional:54[m[K,
+                 from [01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:2[m[K:
+[01m[K/usr/include/c++/9/bits/basic_string.h:6115:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)[m[K’
+ 6115 |     [01;36m[Koperator[m[K+(_CharT __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6115:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:54:67:[m[K [01;36m[Knote: [m[K  couldn’t deduce template parameter ‘[01m[K_Traits[m[K’
+   54 |       message.data = message.data + ", " + to_string(arr[k][l]) + [01;36m[Kendl[m[K;
+      |                                                                   [01;36m[K^~~~[m[K
+In file included from [01m[K/usr/include/c++/9/string:55[m[K,
+                 from [01m[K/usr/include/c++/9/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/9/array:39[m[K,
+                 from [01m[K/usr/include/c++/9/tuple:39[m[K,
+                 from [01m[K/usr/include/c++/9/functional:54[m[K,
+                 from [01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:2[m[K:
+[01m[K/usr/include/c++/9/bits/basic_string.h:6121:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, const _CharT*) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>][m[K’
+ 6121 |     [01;36m[Koperator[m[K+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6122:22:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[K<unresolved overloaded function type>[m[K’ to ‘[01m[Kconst char*[m[K’
+ 6122 |        [01;36m[Kconst _CharT* __rhs[m[K)
+      |        [01;36m[K~~~~~~~~~~~~~~^~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6127:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, _CharT) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>][m[K’
+ 6127 |     [01;36m[Koperator[m[K+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/basic_string.h:6128:15:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[K<unresolved overloaded function type>[m[K’ to ‘[01m[Kchar[m[K’
+ 6128 |        [01;36m[K_CharT __rhs[m[K)
+      |        [01;36m[K~~~~~~~^~~~~[m[K
+In file included from [01m[K/usr/include/c++/9/vector:68[m[K,
+                 from [01m[K/home/arbot/ros2_foxy/install/rclcpp/include/rclcpp/executor.hpp:27[m[K,
+                 from [01m[K/home/arbot/ros2_foxy/install/rclcpp/include/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/home/arbot/ros2_foxy/install/rclcpp/include/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/home/arbot/ros2_foxy/install/rclcpp/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:9[m[K:
+[01m[K/usr/include/c++/9/bits/stl_bvector.h:303:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::_Bit_iterator std::operator+(std::ptrdiff_t, const std::_Bit_iterator&)[m[K’
+  303 |   [01;36m[Koperator[m[K+(ptrdiff_t __n, const _Bit_iterator& __x)
+      |   [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/stl_bvector.h:303:23:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’ to ‘[01m[Kstd::ptrdiff_t[m[K’ {aka ‘[01m[Klong int[m[K’}
+  303 |   operator+([01;36m[Kptrdiff_t __n[m[K, const _Bit_iterator& __x)
+      |             [01;36m[K~~~~~~~~~~^~~[m[K
+[01m[K/usr/include/c++/9/bits/stl_bvector.h:393:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::_Bit_const_iterator std::operator+(std::ptrdiff_t, const std::_Bit_const_iterator&)[m[K’
+  393 |   [01;36m[Koperator[m[K+(ptrdiff_t __n, const _Bit_const_iterator& __x)
+      |   [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/stl_bvector.h:393:23:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’ to ‘[01m[Kstd::ptrdiff_t[m[K’ {aka ‘[01m[Klong int[m[K’}
+  393 |   operator+([01;36m[Kptrdiff_t __n[m[K, const _Bit_const_iterator& __x)
+      |             [01;36m[K~~~~~~~~~~^~~[m[K
+In file included from [01m[K/usr/include/c++/9/bits/stl_algobase.h:67[m[K,
+                 from [01m[K/usr/include/c++/9/bits/char_traits.h:39[m[K,
+                 from [01m[K/usr/include/c++/9/string:40[m[K,
+                 from [01m[K/usr/include/c++/9/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/9/array:39[m[K,
+                 from [01m[K/usr/include/c++/9/tuple:39[m[K,
+                 from [01m[K/usr/include/c++/9/functional:54[m[K,
+                 from [01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:2[m[K:
+[01m[K/usr/include/c++/9/bits/stl_iterator.h:996:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Iterator, class _Container> __gnu_cxx::__normal_iterator<_Iterator, _Container> __gnu_cxx::operator+(typename __gnu_cxx::__normal_iterator<_Iterator, _Container>::difference_type, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)[m[K’
+  996 |     [01;36m[Koperator[m[K+(typename __normal_iterator<_Iterator, _Container>::difference_type
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/9/bits/stl_iterator.h:996:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:54:67:[m[K [01;36m[Knote: [m[K  couldn’t deduce template parameter ‘[01m[K_Iterator[m[K’
+   54 |       message.data = message.data + ", " + to_string(arr[k][l]) + [01;36m[Kendl[m[K;
+      |                                                                   [01;36m[K^~~~[m[K
+make[2]: *** [CMakeFiles/cpp_executable.dir/build.make:63: CMakeFiles/cpp_executable.dir/src/cpp_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/cpp_executable.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,28 @@
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:[m[K In member function ‘[01m[Kvoid MinimalPublisher::timer_callback()[m[K’:
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:52:36:[m[K [01;31m[Kerror: [m[K‘[01m[Ki[m[K’ was not declared in this scope
+   52 |       message.data = to_string(arr[[01;31m[Ki[m[K][j]);
+      |                                    [01;31m[K^[m[K
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:52:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kj[m[K’ was not declared in this scope; did you mean ‘[01m[Kjn[m[K’?
+   52 |       message.data = to_string(arr[i][[01;31m[Kj[m[K]);
+      |                                       [01;31m[K^[m[K
+      |                                       [32m[Kjn[m[K
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:54:58:[m[K [01;31m[Kerror: [m[K‘[01m[Ki[m[K’ was not declared in this scope
+   54 |       message.data = message.data + ", " + to_string(arr[[01;31m[Ki[m[K][j]) + endline;
+      |                                                          [01;31m[K^[m[K
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:54:61:[m[K [01;31m[Kerror: [m[K‘[01m[Kj[m[K’ was not declared in this scope; did you mean ‘[01m[Kjn[m[K’?
+   54 |       message.data = message.data + ", " + to_string(arr[i][[01;31m[Kj[m[K]) + endline;
+      |                                                             [01;31m[K^[m[K
+      |                                                             [32m[Kjn[m[K
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:54:67:[m[K [01;31m[Kerror: [m[K‘[01m[Kendline[m[K’ was not declared in this scope
+   54 |       message.data = message.data + ", " + to_string(arr[i][j]) + [01;31m[Kendline[m[K;
+      |                                                                   [01;31m[K^~~~~~~[m[K
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:57:58:[m[K [01;31m[Kerror: [m[K‘[01m[Ki[m[K’ was not declared in this scope
+   57 |       message.data = message.data + ", " + to_string(arr[[01;31m[Ki[m[K][j]);
+      |                                                          [01;31m[K^[m[K
+[01m[K/home/arbot/dev_ws/src/my_cpp_py_pkg/src/cpp_node.cpp:57:61:[m[K [01;31m[Kerror: [m[K‘[01m[Kj[m[K’ was not declared in this scope; did you mean ‘[01m[Kjn[m[K’?
+   57 |       message.data = message.data + ", " + to_string(arr[i][[01;31m[Kj[m[K]);
+      |                                                             [01;31m[K^[m[K
+      |                                                             [32m[Kjn[m[K
+make[2]: *** [CMakeFiles/cpp_executable.dir/build.make:63: CMakeFiles/cpp_executable.dir/src/cpp_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/cpp_executable.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

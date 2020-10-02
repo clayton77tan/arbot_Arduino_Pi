@@ -1,0 +1,23 @@
+[0.011s] Invoking command in '/home/arbot/dev_ws/build/my_cpp_py_pkg': /usr/bin/cmake --build /home/arbot/dev_ws/build/my_cpp_py_pkg -- -j1 -l1
+[0.078s] CMake Error at CMakeLists.txt:14 (find_package):
+[0.078s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[0.078s]   has asked CMake to find a package configuration file provided by
+[0.079s]   "ament_cmake", but CMake did not find one.
+[0.079s] 
+[0.079s]   Could not find a package configuration file provided by "ament_cmake" with
+[0.079s]   any of the following names:
+[0.079s] 
+[0.079s]     ament_cmakeConfig.cmake
+[0.079s]     ament_cmake-config.cmake
+[0.080s] 
+[0.080s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[0.080s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[0.080s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[0.080s]   has been installed.
+[0.080s] 
+[0.080s] 
+[0.081s] -- Configuring incomplete, errors occurred!
+[0.081s] See also "/home/arbot/dev_ws/build/my_cpp_py_pkg/CMakeFiles/CMakeOutput.log".
+[0.081s] See also "/home/arbot/dev_ws/build/my_cpp_py_pkg/CMakeFiles/CMakeError.log".
+[0.085s] make: *** [Makefile:266: cmake_check_build_system] Error 1
+[0.086s] Invoked command in '/home/arbot/dev_ws/build/my_cpp_py_pkg' returned '2': /usr/bin/cmake --build /home/arbot/dev_ws/build/my_cpp_py_pkg -- -j1 -l1

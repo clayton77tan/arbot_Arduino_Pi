@@ -27,20 +27,42 @@ class MinimalPublisher : public rclcpp::Node
 		}
 
 	private:
-		void timer_callback()
-		{
+		float round(float var){
+			float value = (int)(var * 1000 + .5);
+			return (float)value / 1000;
+		}
+		void timer_callback(){
 			srand (time(NULL));
-			
-			int arr[5]={};
-			for(int i = 0; i< 5;i++){
-				arr[i] = rand() % 100 + 1;
+
+			double arr[20][5]={};
+
+			arr[0][0] = round(2.49 + static_cast <double> (rand()) / ( static_cast <double> (RAND_MAX/(2.685-2.49))));
+			for(int i = 0; i< 20; i++){
+				arr[i][0]= arr[0][0]; 
+				for(int j = 1; j< 5; j++){
+					arr[i][j] = round(-90 + static_cast <double> (rand()) / ( static_cast <double> (RAND_MAX/(90-(-90)))));
+				}
 			}
 
 			auto message = std_msgs::msg::String();
-			message.data = to_string(arr[0]) + ", " + to_string(arr[1]) + ", " + to_string(arr[2]) + ", " + to_string(arr[3]) + ", " + to_string(arr[4]);
+
+			for(int k = 0; k<20;k++){
+				for(int l = 0;l<5;l++){
+					if(l == 0 && k == 0){
+						message.data = to_string(arr[k][l]);
+					}
+					else if(l == 4){
+						message.data = message.data + ", " + to_string(arr[k][l]) + '\n';
+					}
+					else{
+						message.data = message.data + ", " + to_string(arr[k][l]);
+					}
+				}
+			}
 			RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
 			publisher_->publish(message);
 		}
+
 		rclcpp::TimerBase::SharedPtr timer_;
 		rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
 		size_t count_;
