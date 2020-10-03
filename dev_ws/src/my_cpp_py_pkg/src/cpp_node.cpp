@@ -49,13 +49,16 @@ class MinimalPublisher : public rclcpp::Node
 			for(int k = 0; k<20;k++){
 				for(int l = 0;l<5;l++){
 					if(l == 0 && k == 0){
-						message.data = to_string(arr[k][l]);
+						message.data = to_string(arr[k][l]) + ", ";
 					}
-					else if(l == 4){
-						message.data = message.data + ", " + to_string(arr[k][l]) + '\n';
+					else if(l == 4 && k != 19){
+						message.data = message.data + to_string(arr[k][l]) + '\n';
+					}
+					else if(l == 4 && k == 19){
+						message.data = message.data + to_string(arr[k][l]);
 					}
 					else{
-						message.data = message.data + ", " + to_string(arr[k][l]);
+						message.data = message.data + to_string(arr[k][l]) + ", ";
 					}
 				}
 			}
