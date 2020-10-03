@@ -52,7 +52,7 @@ class MinimalPublisher : public rclcpp::Node
 						message.data = to_string(arr[k][l]) + ", ";
 					}
 					else if(l == 4 && k != 19){
-						message.data = message.data + to_string(arr[k][l]) + '\n';
+						message.data = message.data + to_string(arr[k][l]) + ", ";
 					}
 					else if(l == 4 && k == 19){
 						message.data = message.data + to_string(arr[k][l]);
