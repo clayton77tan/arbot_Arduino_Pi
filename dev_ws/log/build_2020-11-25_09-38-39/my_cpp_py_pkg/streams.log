@@ -1,0 +1,27 @@
+[0.061s] Invoking command in '/home/arbot/dev_ws/build/my_cpp_py_pkg': /usr/bin/cmake --build /home/arbot/dev_ws/build/my_cpp_py_pkg -- -j1 -l1
+[1.091s] [100%] Built target cpp_executable
+[1.113s] Invoked command in '/home/arbot/dev_ws/build/my_cpp_py_pkg' returned '0': /usr/bin/cmake --build /home/arbot/dev_ws/build/my_cpp_py_pkg -- -j1 -l1
+[1.187s] Invoking command in '/home/arbot/dev_ws/build/my_cpp_py_pkg': /usr/bin/cmake --install /home/arbot/dev_ws/build/my_cpp_py_pkg
+[1.210s] -- Install configuration: ""
+[1.214s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/cpp_executable
+[1.216s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/pythonpath.sh
+[1.216s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/pythonpath.dsv
+[1.218s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/lib/python3.8/site-packages/my_cpp_py_pkg
+[1.219s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/lib/python3.8/site-packages/my_cpp_py_pkg/module_to_import.py
+[1.220s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/lib/python3.8/site-packages/my_cpp_py_pkg/__init__.py
+[1.316s] Listing '/home/arbot/dev_ws/install/my_cpp_py_pkg/lib/python3.8/site-packages/my_cpp_py_pkg'...
+[1.327s] -- Installing: /home/arbot/dev_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/py_node.py
+[1.330s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/ament_index/resource_index/package_run_dependencies/my_cpp_py_pkg
+[1.331s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/ament_index/resource_index/parent_prefix_path/my_cpp_py_pkg
+[1.334s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/ament_prefix_path.dsv
+[1.336s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/path.dsv
+[1.336s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/local_setup.bash
+[1.337s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/local_setup.sh
+[1.337s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/local_setup.zsh
+[1.338s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/local_setup.dsv
+[1.338s] -- Installing: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/package.dsv
+[1.340s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/ament_index/resource_index/packages/my_cpp_py_pkg
+[1.341s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/cmake/my_cpp_py_pkgConfig.cmake
+[1.341s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/cmake/my_cpp_py_pkgConfig-version.cmake
+[1.342s] -- Up-to-date: /home/arbot/dev_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/package.xml
+[1.353s] Invoked command in '/home/arbot/dev_ws/build/my_cpp_py_pkg' returned '0': /usr/bin/cmake --install /home/arbot/dev_ws/build/my_cpp_py_pkg
