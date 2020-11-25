@@ -12,12 +12,14 @@ from rclpy.node import Node
 
 from std_msgs.msg import String
 
+# declare lists
 time = []
 angle0 = []
 angle1 = []
 angle2 = []
 angle3 = []
 
+# clear lists
 time.clear()
 angle0.clear()
 angle1.clear()
@@ -35,6 +37,7 @@ class MinimalSubscriber(Node):
     def listener_callback(self, msg): # callback is msg
         self.get_logger().info('I heard: "%s"' % msg.data) # msg.data is the message we get
 
+		# make lists global
         global time
         global angle0
         global angle1
@@ -90,21 +93,25 @@ class MinimalSubscriber(Node):
         file.write("time = " + str_time + "\n")
         file.close()
         
+        # store in txt file to view
         file = open("/home/arbot/Desktop/Angle0.txt", "a")
         str_angle0 = str(listangle0)
         file.write("angle0 = " + str_angle0 + "\n")
         file.close()     
         
+        # store in txt file to view
         file = open("/home/arbot/Desktop/Angle1.txt", "a")
         str_angle1 = str(listangle1)
         file.write("angle1 = " + str_angle1 + "\n")
         file.close() 
         
+        # store in txt file to view
         file = open("/home/arbot/Desktop/Angle2.txt", "a")
         str_angle2 = str(listangle2)
         file.write("angle2 = " + str_angle2 + "\n")
         file.close() 
         
+        # store in txt file to view
         file = open("/home/arbot/Desktop/Angle3.txt", "a")
         str_angle3 = str(listangle3)
         file.write("angle3 = " + str_angle3 + "\n")
