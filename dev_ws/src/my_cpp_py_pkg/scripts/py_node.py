@@ -37,7 +37,7 @@ class MinimalSubscriber(Node):
     def listener_callback(self, msg): # callback is msg
         self.get_logger().info('I heard: "%s"' % msg.data) # msg.data is the message we get
 
-		# make lists global
+        # make lists global
         global time
         global angle0
         global angle1
@@ -48,7 +48,7 @@ class MinimalSubscriber(Node):
         numlist = num[0:100] # make array into list
         listnum = [float(a) for a in numlist] # make into float list
 
-		# counter variables
+        # counter variables
         i = 0
         j = 0
         m = 0
@@ -71,7 +71,7 @@ class MinimalSubscriber(Node):
             i = i + 1
 
 
-		# remove from time list if time < 0.1
+        # remove from time list if time < 0.1
         if (time[0] < 0.1):
             time =  time[20:]
             angle0 = angle0[20:]
@@ -79,7 +79,7 @@ class MinimalSubscriber(Node):
             angle2 = angle2[20:]
             angle3 = angle3[20:]
 
-		# store in execution variables so variables don't get overwritten incorrectly
+        # store in execution variables so variables don't get overwritten incorrectly
         listtime = [float(b) for b in time]
         listangle0 = [float(c) for c in angle0]
         listangle1 = [float(d) for d in angle1]
