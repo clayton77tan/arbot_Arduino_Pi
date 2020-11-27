@@ -13,6 +13,7 @@ from rclpy.node import Node
 from std_msgs.msg import String
 
 # declare lists
+l = 0
 time = []
 angle0 = []
 angle1 = []
@@ -38,6 +39,7 @@ class MinimalSubscriber(Node):
         self.get_logger().info('I heard: "%s"' % msg.data) # msg.data is the message we get
 
         # make lists global
+        global l
         global time
         global angle0
         global angle1
@@ -70,6 +72,21 @@ class MinimalSubscriber(Node):
                 angle3.append(listnum[i])
             i = i + 1
 
+        if (l > 19):
+            if (time[20] < time[0]):
+                o = 0;
+                while o < 20:
+                    time[o], time[o + 20] = time[o + 20], time[o]
+                    o = o + 1
+            # remove from time list if time < 0.1
+            if (time[20] < 0.1):
+                time =  time[:20] + time[40:]
+                angle0 = angle0[:20] + angle0[40:]
+                angle1 = angle1[:20] + angle1[40:]
+                angle2 = angle2[:20] + angle2[40:]
+                angle3 = angle3[:20] + angle3[40:]                 
+
+
 
         # remove from time list if time < 0.1
         if (time[0] < 0.1):
@@ -78,53 +95,49 @@ class MinimalSubscriber(Node):
             angle1 = angle1[20:]
             angle2 = angle2[20:]
             angle3 = angle3[20:]
-
-        # store in execution variables so variables don't get overwritten incorrectly
-        listtime = [float(b) for b in time]
-        listangle0 = [float(c) for c in angle0]
-        listangle1 = [float(d) for d in angle1]
-        listangle2 = [float(e) for e in angle2]
-        listangle3 = [float(f) for f in angle3]
+            
 
         
         # store in txt file to view
         file = open("/home/arbot/Desktop/Time.txt", "a")
-        str_time = str(listtime)
+        str_time = str(time)
         file.write("time = " + str_time + "\n")
         file.close()
         
         # store in txt file to view
-        file = open("/home/arbot/Desktop/Angle0.txt", "a")
-        str_angle0 = str(listangle0)
-        file.write("angle0 = " + str_angle0 + "\n")
-        file.close()     
+        file = open("/home/arbot/Desktop/ExeTime.txt", "a")
+        str_exetime = str(time[0])
+        file.write("exetime = " + str_exetime + "\n")
+        file.close()
         
-        # store in txt file to view
-        file = open("/home/arbot/Desktop/Angle1.txt", "a")
-        str_angle1 = str(listangle1)
-        file.write("angle1 = " + str_angle1 + "\n")
-        file.close() 
+        # # store in txt file to view
+        # file = open("/home/arbot/Desktop/Angle0.txt", "a")
+        # str_angle0 = str(angle0)
+        # file.write("angle0 = " + str_angle0 + "\n")
+        # file.close()     
         
-        # store in txt file to view
-        file = open("/home/arbot/Desktop/Angle2.txt", "a")
-        str_angle2 = str(listangle2)
-        file.write("angle2 = " + str_angle2 + "\n")
-        file.close() 
+        # # store in txt file to view
+        # file = open("/home/arbot/Desktop/Angle1.txt", "a")
+        # str_angle1 = str(angle1)
+        # file.write("angle1 = " + str_angle1 + "\n")
+        # file.close() 
         
-        # store in txt file to view
-        file = open("/home/arbot/Desktop/Angle3.txt", "a")
-        str_angle3 = str(listangle3)
-        file.write("angle3 = " + str_angle3 + "\n")
-        file.close() 
+        # # store in txt file to view
+        # file = open("/home/arbot/Desktop/Angle2.txt", "a")
+        # str_angle2 = str(angle2)
+        # file.write("angle2 = " + str_angle2 + "\n")
+        # file.close() 
+        
+        # # store in txt file to view
+        # file = open("/home/arbot/Desktop/Angle3.txt", "a")
+        # str_angle3 = str(angle3)
+        # file.write("angle3 = " + str_angle3 + "\n")
+        # file.close() 
                                                        
 
-        # print("time: ", listtime) # print times        
-        # print("angle0: ", listangle0) # print angle0
-        # print("angle1: ", listangle1) # print angle1
-        # print("angle2: ", listangle2) # print angle2
-        # print("angle3: ", listangle3) # print angle3
 
         time[:] = [k - 0.1 for k in time] # subtract 0.1 sec from each time
+        l = l + 1
 
 
 
