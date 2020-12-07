@@ -1,0 +1,9 @@
+colcon build --packages-select my_cpp_py_pkg
+source ../ros2_foxy/install/setup.bash 
+source install/local_setup.bash 
+ros2 run my_cpp_py_pkg cpp_executable
+
+source ../ros2_foxy/install/setup.bash 
+source install/local_setup.bash 
+ros2 run my_cpp_py_pkg py_node.py
+
