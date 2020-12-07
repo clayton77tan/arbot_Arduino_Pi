@@ -12,8 +12,14 @@ from rclpy.node import Node
 
 from std_msgs.msg import String
 
+# declare global variables
+l = 0 # global counter
+MAX_LIST_LEN = 100 # 5 items(time, angle 0-3) for 20 end effector positions
+NUM_EXE = 20 # 20 end effector positions
+FREQ = 0.1 # positions updated every 0.1 sec
+NUM_ITEMS = 5 # time, angle0, angle1, angle2, angle3 
+
 # declare lists
-l = 0
 time = []
 angle0 = []
 angle1 = []
@@ -38,8 +44,12 @@ class MinimalSubscriber(Node):
     def listener_callback(self, msg): # callback is msg
         self.get_logger().info('I heard: "%s"' % msg.data) # msg.data is the message we get
 
-        # make lists global
+        # make lists/variables global
         global l
+        global MAX_LIST_LEN
+        global NUM_EXE
+        global FREQ
+        global NUM_ITEMS
         global time
         global angle0
         global angle1
@@ -47,19 +57,16 @@ class MinimalSubscriber(Node):
         global angle3
 
         num = msg.data.split(',') # split the string into a list
-        numlist = num[0:100] # make array into list
+        numlist = num[0:MAX_LIST_LEN] # make array into list
         listnum = [float(a) for a in numlist] # make into float list
 
         # counter variables
         i = 0
-        j = 0
-        m = 0
-        n = 0
-        
+        j = 0              
         
         # split array into categories
-        while i < 100:
-            j = i%5
+        while i < MAX_LIST_LEN:
+            j = i%NUM_ITEMS
             if (j == 0):
                 time.append(listnum[i])
             elif(j == 1):
@@ -70,75 +77,66 @@ class MinimalSubscriber(Node):
                 angle2.append(listnum[i])
             elif(j == 4):
                 angle3.append(listnum[i])
-            i = i + 1
+            i += 1
 
-        if (l > 19):
-            if (time[20] < time[0]):
-                o = 0;
-                while o < 20:
-                    time[o], time[o + 20] = time[o + 20], time[o]
-                    o = o + 1
+
+        # rearrange if time 1 < time 2
+        if (l >= NUM_EXE):
+            if (time[0] > time[NUM_EXE]):
+                o = 0
+                              
+                while o < NUM_EXE:
+                    time[o], time[o + NUM_EXE] = time[o + NUM_EXE], time[o]
+                    angle0[o], angle0[o + NUM_EXE] = angle0[o + NUM_EXE], angle0[o]
+                    angle1[o], angle1[o + NUM_EXE] = angle1[o + NUM_EXE], angle1[o]
+                    angle2[o], angle2[o + NUM_EXE] = angle2[o + NUM_EXE], angle2[o]
+                    angle3[o], angle3[o + NUM_EXE] = angle3[o + NUM_EXE], angle3[o]
+                    o += 1  
+                
             # remove from time list if time < 0.1
-            if (time[20] < 0.1):
-                time =  time[:20] + time[40:]
-                angle0 = angle0[:20] + angle0[40:]
-                angle1 = angle1[:20] + angle1[40:]
-                angle2 = angle2[:20] + angle2[40:]
-                angle3 = angle3[:20] + angle3[40:]                 
-
-
+            if (time[NUM_EXE] < FREQ):
+                time =  time[:NUM_EXE] + time[NUM_EXE*2:]
+                angle0 = angle0[:NUM_EXE] + angle0[NUM_EXE*2:]
+                angle1 = angle1[:NUM_EXE] + angle1[NUM_EXE*2:]
+                angle2 = angle2[:NUM_EXE] + angle2[NUM_EXE*2:]
+                angle3 = angle3[:NUM_EXE] + angle3[NUM_EXE*2:]                 
 
         # remove from time list if time < 0.1
-        if (time[0] < 0.1):
-            time =  time[20:]
-            angle0 = angle0[20:]
-            angle1 = angle1[20:]
-            angle2 = angle2[20:]
-            angle3 = angle3[20:]
+        if (time[0] < FREQ):
+            # execute ODrive commands here
             
+            # store in txt file to view
+            file = open("/home/arbot/Desktop/time.txt", "a")
+            str_time = str(time)
+            file.write("Time: " + str(l) + " time = " + str_time + "\n")
+            file.close()  
+            
+            # store in txt file to view
+            file = open("/home/arbot/Desktop/Angle0.txt", "a")
+            str_angle0 = str(angle0)
+            file.write("Time: " + str(l) + " angle0 = " + str_angle0 + "\n")
+            file.close()     
+            
+            # store in txt file to view
+            file = open("/home/arbot/Desktop/exetime.txt", "a")
+            str_exetime = str(time[0])
+            file.write("Time: " + str(l) + " exetime = " + str_exetime + "\n")
+            file.close()  
+            
+            # store in txt file to view
+            file = open("/home/arbot/Desktop/exeAngle0.txt", "a")
+            str_exeangle0 = str(angle0[0])
+            file.write("Time: " + str(l) + " exeangle0 = " + str_exeangle0 + "\n")
+            file.close()             
+            
+            time =  time[NUM_EXE:]
+            angle0 = angle0[NUM_EXE:]
+            angle1 = angle1[NUM_EXE:]
+            angle2 = angle2[NUM_EXE:]
+            angle3 = angle3[NUM_EXE:]                                                               
 
-        
-        # store in txt file to view
-        file = open("/home/arbot/Desktop/Time.txt", "a")
-        str_time = str(time)
-        file.write("time = " + str_time + "\n")
-        file.close()
-        
-        # store in txt file to view
-        file = open("/home/arbot/Desktop/ExeTime.txt", "a")
-        str_exetime = str(time[0])
-        file.write("exetime = " + str_exetime + "\n")
-        file.close()
-        
-        # # store in txt file to view
-        # file = open("/home/arbot/Desktop/Angle0.txt", "a")
-        # str_angle0 = str(angle0)
-        # file.write("angle0 = " + str_angle0 + "\n")
-        # file.close()     
-        
-        # # store in txt file to view
-        # file = open("/home/arbot/Desktop/Angle1.txt", "a")
-        # str_angle1 = str(angle1)
-        # file.write("angle1 = " + str_angle1 + "\n")
-        # file.close() 
-        
-        # # store in txt file to view
-        # file = open("/home/arbot/Desktop/Angle2.txt", "a")
-        # str_angle2 = str(angle2)
-        # file.write("angle2 = " + str_angle2 + "\n")
-        # file.close() 
-        
-        # # store in txt file to view
-        # file = open("/home/arbot/Desktop/Angle3.txt", "a")
-        # str_angle3 = str(angle3)
-        # file.write("angle3 = " + str_angle3 + "\n")
-        # file.close() 
-                                                       
-
-
-        time[:] = [k - 0.1 for k in time] # subtract 0.1 sec from each time
-        l = l + 1
-
+        time[:] = [k - FREQ for k in time] # subtract 0.1 sec from each time
+        l += 1
 
 
 def main(args=None):
